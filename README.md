@@ -1,6 +1,4 @@
-```markdown
 # ColumnBuilder
-
 This is a Flutter widget named `ColumnBuilder` that allows you to dynamically build a column of widgets based on the provided parameters.
 
 ## How to Use
@@ -32,7 +30,6 @@ ColumnBuilder(
   verticalDirection: VerticalDirection.down, // Customize vertical direction
 )
 ```
-
 ### Parameters
 
 - **itemBuilder**: A function that returns the widget for each item in the column.
@@ -70,8 +67,6 @@ class MyWidget extends StatelessWidget {
   }
 }
 ```
-
 This will create a column with 10 list tiles with titles "Item 0", "Item 1", ..., "Item 9". Adjust the parameters according to your requirements.
 
 Feel free to customize the parameters and the itemBuilder function according to your application's needs.
-```
