@@ -1,0 +1,19 @@
+name: ColumnBuilder
+description: "A new Flutter package project."
+version: 0.0.1
+homepage: https://github.com/Abrarahmed786/columnbuilder.git
+
+environment:
+  sdk: '>=3.2.6 <4.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
