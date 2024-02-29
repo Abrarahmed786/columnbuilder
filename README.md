@@ -1,39 +1,77 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+```markdown
+# ColumnBuilder
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+This is a Flutter widget named `ColumnBuilder` that allows you to dynamically build a column of widgets based on the provided parameters.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+## How to Use
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+### 1. Import the File
 
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Import the `ColumnBuilder` file into your Flutter project.
 
 ```dart
-const like = 'sample';
+import 'package:flutter/material.dart';
 ```
 
-## Additional information
+### 2. Implement ColumnBuilder Widget
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+Use the `ColumnBuilder` widget in your Flutter application by providing the required parameters.
+
+```dart
+ColumnBuilder(
+  itemBuilder: (BuildContext context, int index) {
+    // Build your widget here based on the index
+    // Example: return Text('Item $index');
+  },
+  itemCount: itemCount,
+  reverse: false, // Set to true if you want to reverse the order
+  mainAxisAlignment: MainAxisAlignment.start, // Customize main axis alignment
+  mainAxisSize: MainAxisSize.max, // Customize main axis size
+  crossAxisAlignment: CrossAxisAlignment.start, // Customize cross axis alignment
+  textDirection: null, // Set the text direction if needed
+  verticalDirection: VerticalDirection.down, // Customize vertical direction
+)
+```
+
+### Parameters
+
+- **itemBuilder**: A function that returns the widget for each item in the column.
+- **itemCount**: The total number of items in the column.
+- **reverse**: (Optional) Whether to reverse the order of items in the column.
+- **mainAxisAlignment**: (Optional) Aligns the children along the main axis.
+- **mainAxisSize**: (Optional) Determines how much space the column should occupy along the main axis.
+- **crossAxisAlignment**: (Optional) Aligns the children along the cross axis.
+- **textDirection**: (Optional) The direction to resolve text and children order.
+- **verticalDirection**: (Optional) Determines the order to lay children out vertically.
+
+### Example
+
+```dart
+import 'package:flutter/material.dart';
+
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: ColumnBuilder(
+        itemBuilder: (BuildContext context, int index) {
+          return ListTile(
+            title: Text('Item $index'),
+          );
+        },
+        itemCount: 10,
+        reverse: false,
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        verticalDirection: VerticalDirection.down,
+      ),
+    );
+  }
+}
+```
+
+This will create a column with 10 list tiles with titles "Item 0", "Item 1", ..., "Item 9". Adjust the parameters according to your requirements.
+
+Feel free to customize the parameters and the itemBuilder function according to your application's needs.
+```
